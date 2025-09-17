@@ -3,6 +3,7 @@
 import Icon from "@/components/atoms/icon";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -75,27 +76,27 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             {menuItems.map((item, index) => {
               const isActive = pathname === item.href;
               return (
-                <motion.a
-                  key={item.label}
-                  href={item.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + index * 0.05 }}
-                  whileHover={{
-                    scale: 1.02,
-                    transition: { duration: 0.2 },
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  className={cn(
-                    "flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200",
-                    isActive
-                      ? "bg-blue-50 text-blue-700 border-r-2 border-blue-700"
-                      : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                  )}
-                >
-                  <Icon name={item.icon} size="md" />
-                  <span className="font-medium">{item.label}</span>
-                </motion.a>
+                <Link key={item.label} href={item.href}>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 + index * 0.05 }}
+                    whileHover={{
+                      scale: 1.02,
+                      transition: { duration: 0.2 },
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                    className={cn(
+                      "flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200",
+                      isActive
+                        ? "bg-blue-50 text-blue-700 border-r-2 border-blue-700"
+                        : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                    )}
+                  >
+                    <Icon name={item.icon} size="md" />
+                    <span className="font-medium">{item.label}</span>
+                  </motion.div>
+                </Link>
               );
             })}
           </nav>

@@ -1,3 +1,5 @@
+import PostsContainer from "@/components/containers/posts-container";
+
 export default function PostsPage() {
-  return <div>PostsPage</div>;
+  return <PostsContainer />;
 }
