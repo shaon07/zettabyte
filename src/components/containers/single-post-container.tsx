@@ -3,6 +3,8 @@
 import Loader from "@/components/atoms/loader";
 import { usePost, usePostAuthor } from "@/hooks/use-posts";
 import Link from "next/link";
+import { useCallback } from "react";
+import Button from "../atoms/button";
 import Error from "../atoms/error";
 import PostDetailCard from "../modules/posts/posts-details-card";
 
@@ -20,6 +22,10 @@ export default function SinglePostContainer({
   } = usePost(Number.parseInt(postId));
 
   const { data: user } = usePostAuthor(post?.userId || 0);
+
+  const handleThrowError = useCallback(() => {
+    window.location.pathname = "/posts/9999";
+  }, []);
 
   return (
     <>
@@ -45,6 +51,8 @@ export default function SinglePostContainer({
             Back to Posts
           </Link>
         </div>
+
+        <Button onClick={handleThrowError}>Simulate Error</Button>
 
         {postLoading ? (
           <Loader />
