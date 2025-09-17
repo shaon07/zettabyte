@@ -6,9 +6,9 @@ import Header from "@/components/organisms/header";
 import RecentActivity from "@/components/organisms/recent-activity";
 import Sidebar from "@/components/organisms/sidebar";
 import StatsGrid from "@/components/organisms/stats-grid";
-import { DashboardData, mockData } from "@/resource/dashboard-data";
+import { useDashboardData } from "@/hooks/use-dashboard-data";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -24,29 +24,7 @@ const pageTransition = {
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [data, setData] = useState<DashboardData | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    // Simulate API call with mock data
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-
-        // Simulate network delay
-        await new Promise((resolve) => setTimeout(resolve, 800));
-
-        setData(mockData);
-      } catch (err) {
-        setError("Failed to fetch dashboard data");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { data, loading, error } = useDashboardData();
 
   return (
     <motion.div

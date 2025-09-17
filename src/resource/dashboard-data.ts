@@ -1,16 +1,5 @@
-export interface DashboardData {
-  chartData: Array<{
-    month: string;
-    value: number;
-  }>;
-  activities: Array<{
-    id: string;
-    user: string;
-    action: string;
-    time: string;
-    avatar: string;
-  }>;
-}
+import { DashboardData } from "@/types";
+
 export const mockData: DashboardData = {
   chartData: [
     { month: "Jan", value: 4000 },
