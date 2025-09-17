@@ -26,7 +26,7 @@ export default function Dashboard() {
                     Welcome to Dashboard
                   </h1>
                   <p className="text-gray-600">
-                    Here's your business overview and key metrics at a glance.
+                    Here is your business overview and key metrics at a glance.
                   </p>
                 </div>
                 <motion.div
