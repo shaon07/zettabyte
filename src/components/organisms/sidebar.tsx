@@ -16,6 +16,7 @@ const menuItems = [
   { icon: "dashboard", label: "Dashboard", href: "/" },
   { icon: "posts", label: "Posts", href: "/posts" },
   { icon: "users", label: "Users", href: "/users" },
+  { icon: "profile", label: "Profile", href: "/profile" },
 ];
 
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
@@ -75,6 +76,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           <nav className="space-y-2">
             {menuItems.map((item, index) => {
               const isActive = pathname === item.href;
+
               return (
                 <Link key={item.label} href={item.href}>
                   <motion.div
