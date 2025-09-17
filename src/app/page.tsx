@@ -1,6 +1,6 @@
 "use client";
-import Button from "@/components/modules/button";
-import Card from "@/components/modules/card";
+import Button from "@/components/atoms/button";
+import Card from "@/components/atoms/card";
 import { motion } from "framer-motion";
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
