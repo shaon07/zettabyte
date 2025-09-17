@@ -1,14 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-interface CacheEntry<T> {
-  data: T;
-  timestamp: number;
-  isLoading: boolean;
-  error: string | null;
-}
-
-interface QueryState {
-  [key: string]: CacheEntry<any>;
-}
+import { CacheEntry, QueryState } from "@/types";
 
 class QueryClient {
   private cache: QueryState = {};

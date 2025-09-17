@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface DashboardData {
   chartData: Array<{
     month: string;
@@ -41,4 +42,29 @@ export interface User {
       lng: string;
     };
   };
+}
+
+export interface UseQueryOptions<T> {
+  enabled?: boolean;
+  refetchOnWindowFocus?: boolean;
+  staleTime?: number;
+}
+
+export interface UseQueryResult<T> {
+  data: T | null;
+  isLoading: boolean;
+  error: string | null;
+  refetch: () => Promise<void>;
+  invalidate: () => void;
+}
+
+interface CacheEntry<T> {
+  data: T;
+  timestamp: number;
+  isLoading: boolean;
+  error: string | null;
+}
+
+interface QueryState {
+  [key: string]: CacheEntry<any>;
 }

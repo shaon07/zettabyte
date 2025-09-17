@@ -1,5 +1,3 @@
-"use client";
-
 import { apiClient } from "@/lib/api-client";
 import { Post, User } from "@/types";
 import { useQuery } from "./use-query";

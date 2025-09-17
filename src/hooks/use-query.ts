@@ -1,21 +1,6 @@
-"use client";
-
 import { queryClient } from "@/lib/query-client";
+import { UseQueryOptions, UseQueryResult } from "@/types";
 import { useCallback, useEffect, useState } from "react";
-
-interface UseQueryOptions<T> {
-  enabled?: boolean;
-  refetchOnWindowFocus?: boolean;
-  staleTime?: number;
-}
-
-interface UseQueryResult<T> {
-  data: T | null;
-  isLoading: boolean;
-  error: string | null;
-  refetch: () => Promise<void>;
-  invalidate: () => void;
-}
 
 export function useQuery<T>(
   key: string,

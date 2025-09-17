@@ -1,31 +1,6 @@
-"use client";
-
 import { apiClient } from "@/lib/api-client";
+import { User } from "@/types";
 import { useQuery } from "./use-query";
-
-interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-    catchPhrase: string;
-    bs: string;
-  };
-  address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string;
-    };
-  };
-}
 
 const getUsers = async (): Promise<User[]> => {
   const response = await apiClient.get<User[]>("/users");
