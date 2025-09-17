@@ -7,7 +7,7 @@ export default function Error({ error }: { error: string }) {
       animate={{ opacity: 1, scale: 1 }}
       className="text-center text-red-600 p-8"
     >
-      <p>Error loading posts: {error}</p>
+      <p>An error occurred. Please try again later. {error && `(${error})`}</p>
     </motion.div>
   );
 }
