@@ -1,5 +1,6 @@
 "use client";
 import Button from "@/components/modules/button";
+import Card from "@/components/modules/card";
 import { motion } from "framer-motion";
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -32,9 +33,12 @@ export default function Home() {
           </div>
 
           <div className="flex-1 bg-amber-50 h-full">
-            <h2 className="text-black">
+            <div className="flex flex-col gap-2">
               <Button>primary button</Button>
-            </h2>
+              <Card>
+                <p className="text-black">card content</p>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
