@@ -1,4 +1,5 @@
 "use client";
+import Button from "@/components/modules/button";
 import { motion } from "framer-motion";
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -31,7 +32,9 @@ export default function Home() {
           </div>
 
           <div className="flex-1 bg-amber-50 h-full">
-            <h2 className="text-black">main content</h2>
+            <h2 className="text-black">
+              <Button>primary button</Button>
+            </h2>
           </div>
         </div>
       </div>
