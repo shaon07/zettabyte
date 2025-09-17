@@ -22,15 +22,6 @@ export default function Header({ onMenuClick }: HeaderProps) {
           </Button>
           <h1 className="text-xl font-semibold text-gray-900">Dashboard</h1>
         </div>
-
-        <div className="flex items-center space-x-4">
-          <Button variant="outline" size="sm">
-            Export
-          </Button>
-          <Button variant="primary" size="sm">
-            Add New
-          </Button>
-        </div>
       </div>
     </header>
   );
