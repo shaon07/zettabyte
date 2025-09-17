@@ -1,3 +1,4 @@
+import PageRender from "@/components/layouts/pageRender";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -28,7 +29,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <PageRender>{children}</PageRender>
       </body>
     </html>
   );
