@@ -2,6 +2,8 @@
 import PostCard from "@/components/molecules/post-card";
 import { usePosts } from "@/hooks/use-posts";
 import { motion } from "framer-motion";
+import Error from "../atoms/error";
+import Loader from "../atoms/loader";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -54,16 +56,10 @@ export default function PostsContainer() {
           animate={{ opacity: 1 }}
           className="flex items-center justify-center h-64"
         >
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+          <Loader />
         </motion.div>
       ) : error ? (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="text-center text-red-600 p-8"
-        >
-          <p>Error loading posts: {error}</p>
-        </motion.div>
+        <Error error={error} />
       ) : (
         <motion.div
           variants={containerVariants}

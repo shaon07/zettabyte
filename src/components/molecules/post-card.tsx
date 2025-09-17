@@ -1,4 +1,5 @@
 import Card from "@/components/atoms/card";
+import Link from "next/link";
 
 interface Post {
   id: number;
@@ -32,7 +33,7 @@ export default function PostCard({ post }: PostCardProps) {
           {post.body}
         </p>
 
-        <a
+        <Link
           href={`/posts/${post.id}`}
           className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors group"
         >
@@ -50,7 +51,7 @@ export default function PostCard({ post }: PostCardProps) {
               d="M9 5l7 7-7 7"
             />
           </svg>
-        </a>
+        </Link>
       </div>
     </Card>
   );
