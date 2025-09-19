@@ -14,8 +14,8 @@ interface PostCardProps {
 
 export default function PostCard({ post }: PostCardProps) {
   return (
-    <Card className="hover:shadow-md transition-shadow duration-200 animate-fade-in">
-      <div className="p-6">
+    <Card className="hover:shadow-md transition-shadow duration-200 animate-fade-in h-full">
+      <div className="p-6 flex flex-col justify-between h-full">
         <div className="flex items-start justify-between mb-3">
           <span className="text-sm text-blue-600 font-medium">
             Post #{post.id}
