@@ -60,7 +60,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           damping: 30,
         }}
         className={cn(
-          "fixed left-0 top-0 bottom-0 w-64 bg-white border-r border-gray-200 z-50 lg:translate-x-0 lg:static lg:z-auto"
+          "w-[256px] fixed left-0 top-0 bottom-0 bg-white border-r border-gray-200 z-50 lg:translate-x-0 lg:static lg:z-auto"
         )}
       >
         <div className="p-6 pt-20 lg:pt-6">

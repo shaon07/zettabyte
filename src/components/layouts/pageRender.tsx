@@ -30,16 +30,15 @@ export default function PageRender({ children }: PageRenderProps) {
         exit="out"
         variants={pageVariants}
         transition={pageTransition}
-        className="min-h-screen bg-gray-50"
+        className="bg-gray-50 h-screen grid grid-cols-[1fr] grid-rows-[60px_1fr] lg:grid-cols-[256px_1fr] grid-areas"
       >
         <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
 
-        <div className="flex">
-          <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-          <main className={`flex-1 transition-all duration-300`}>
-            {children}
-          </main>
-        </div>
+        <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+
+        <main className="p-4 overflow-y-auto h-[calc(100vh-60px)]">
+          {children}
+        </main>
       </motion.div>
     </>
   );
